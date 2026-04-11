@@ -1,4 +1,4 @@
-<img width="1512" height="997" alt="Screenshot 2026-04-11 at 13 05 32" src="https://github.com/user-attachments/assets/59cd6189-3a90-4b5b-b52d-60be9da00cbc" /># Ecommerce-Churn-Analysis
+# Ecommerce-Churn-Analysis
 Built a full churn prediction pipeline, from data on messy raw transactions to a dashboard that tells you exactly who's about to leave and why.
 
 # User Funnel Dropoff & Churn Prediction
