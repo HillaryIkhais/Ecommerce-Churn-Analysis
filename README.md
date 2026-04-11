@@ -38,6 +38,7 @@ Accuracy: 99%. Caught 98% of actual churners.
 
 **Dashboard**
 Built in Looker Studio — funnel overview, churn breakdown, risk detail table.
+<img width="1512" height="997" alt="ecommece visualization" src="https://github.com/user-attachments/assets/978c917e-ccd1-4207-ad33-7a07b45fb4d8" />
 
 ## Key Findings
 - 1 in 3 customers are at high risk of permanent churn
