@@ -1,4 +1,4 @@
-# Ecommerce-Churn-Analysis
+<img width="1512" height="997" alt="Screenshot 2026-04-11 at 13 05 32" src="https://github.com/user-attachments/assets/59cd6189-3a90-4b5b-b52d-60be9da00cbc" /># Ecommerce-Churn-Analysis
 Built a full churn prediction pipeline, from data on messy raw transactions to a dashboard that tells you exactly who's about to leave and why.
 
 # User Funnel Dropoff & Churn Prediction
@@ -38,7 +38,8 @@ Accuracy: 99%. Caught 98% of actual churners.
 
 **Dashboard**
 Built in Looker Studio — funnel overview, churn breakdown, risk detail table.
-<img width="1512" height="997" alt="ecommece visualization" src="https://github.com/user-attachments/assets/978c917e-ccd1-4207-ad33-7a07b45fb4d8" />
+
+<img width="1512" height="997" alt="Screenshot 2026-04-11 at 13 05 32" src="https://github.com/user-attachments/assets/ef08c96e-81f6-4565-9c46-bfe9062ebac5" />
 
 ## Key Findings
 - 1 in 3 customers are at high risk of permanent churn
