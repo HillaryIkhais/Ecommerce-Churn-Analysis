@@ -1,4 +1,4 @@
-# Ecommerce-Churn-Analysis
+# Ecommerce Churn Analysis
 Built a full churn prediction pipeline, from data on messy raw transactions to a dashboard that tells you exactly who's about to leave and why.
 
 # User Funnel Dropoff & Churn Prediction
@@ -16,7 +16,7 @@ customer IDs, cancellations, duplicates, and bad prices.
 **Funnel Analysis**
 Tracked every customer from first purchase to active status.
 30% never came back after buying once.
-Of those who did — nearly half went quiet.
+Of those who did, nearly half went quiet.
 
 | Stage | Customers | Drop-off |
 |---|---|---|
@@ -43,7 +43,7 @@ Built in Looker Studio. It contains a funnel overview, churn breakdown, risk det
 
 ## Key Findings
 - 1 in 3 customers are at high risk of permanent churn
-- Biggest drop-off happens between repeat and active buyers
+- Biggest drop off happens between repeat and active buyers
 - 1,313 customers never returned after their first purchase
 
 ## What A Business Should Do With This
