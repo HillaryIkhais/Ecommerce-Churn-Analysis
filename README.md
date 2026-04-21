@@ -41,7 +41,8 @@ Built in Looker Studio. It contains a funnel overview, churn breakdown, risk det
 
 ![23A67DDD-CCE8-4669-B2DA-0A75BE3A4203_1_201_a](https://github.com/user-attachments/assets/7f85f1a7-9c0e-45c0-bbd5-02908dd197ee)
 
-View Interactive Dashboard Here: [
+View Interactive Dashboard Here:
+[Interactive Dashboard
 ](https://datastudio.google.com/u/0/reporting/b5183eaa-c134-4686-9563-e2ffa45b0a05/page/p_5ym6eehf2d)
 
 ## Key Findings
