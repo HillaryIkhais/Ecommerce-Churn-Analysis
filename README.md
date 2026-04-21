@@ -41,6 +41,9 @@ Built in Looker Studio. It contains a funnel overview, churn breakdown, risk det
 
 ![23A67DDD-CCE8-4669-B2DA-0A75BE3A4203_1_201_a](https://github.com/user-attachments/assets/7f85f1a7-9c0e-45c0-bbd5-02908dd197ee)
 
+View Interactive Dashboard Here: [
+](https://datastudio.google.com/reporting/b5183eaa-c134-4686-9563-e2ffa45b0a05)
+
 ## Key Findings
 - 1 in 3 customers are at high risk of permanent churn
 - Biggest drop off happens between repeat and active buyers
