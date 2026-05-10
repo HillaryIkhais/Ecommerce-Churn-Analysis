@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -6,44 +7,50 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, confu
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-cust_data = pd.read_csv("features.csv")
+cust_data = pd.read_csv("datasets/features.csv")
 
-# Features and target
-X = cust_data[['total_orders', 'total_items', 'total_revenue', 'avg_order_value',
-        'unique_products', 'days_since_last_purchase', 'customer_lifespan',
-        'purchase_frequency']]
+FEATURES = ['total_orders', 'total_items', 'total_revenue', 'avg_order_value',
+            'unique_products', 'customer_lifespan', 'purchase_frequency', 
+            'total_active_months', 'returned_second_month']
+
+X = cust_data[FEATURES]
 y = cust_data['churned']
 
-# Split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
-# Scale
 scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
-X_test = scaler.transform(X_test)
+X_test  = scaler.transform(X_test)
 
-# Train
 model = LogisticRegression()
 model.fit(X_train, y_train)
 
-# Predict probabilities
-cust_data['churn_probability'] = model.predict_proba(scaler.transform(
-    cust_data[['total_orders', 'total_items', 'total_revenue', 'avg_order_value',
-        'unique_products', 'days_since_last_purchase', 'customer_lifespan',
-        'purchase_frequency']]
-))[:, 1]
+# ── Predict probabilities (now uses all 10 features) ──
+cust_data['churn_probability'] = model.predict_proba(
+    scaler.transform(cust_data[FEATURES])
+)[:, 1]
 
-print(cust_data[['CustomerID', 'churn_probability']].head(10))
-cust_data.to_csv("features.csv", index=False)
-
-# Evaluate
+# ── Evaluate ──
 y_pred = model.predict(X_test)
-
 print(f"Accuracy:  {accuracy_score(y_test, y_pred):.2f}")
 print(f"Precision: {precision_score(y_test, y_pred):.2f}")
 print(f"Recall:    {recall_score(y_test, y_pred):.2f}")
 
-# Confusion matrix
+# ── Feature importance ──
+importance = pd.DataFrame({
+    'feature':     FEATURES,
+    'coefficient': model.coef_[0],
+    'abs_impact':  np.abs(model.coef_[0])
+}).sort_values('abs_impact', ascending=False)
+
+print("\nTop churn predictors:")
+print(importance[['feature', 'coefficient']].to_string(index=False))
+
+# ── Save ──
+cust_data.to_csv("datasets/features.csv", index=False)
+print(f"\n✓ Saved → datasets/features.csv")
+
+# ── Confusion matrix ──
 cm = confusion_matrix(y_test, y_pred)
 sns.heatmap(cm, annot=True, fmt='d', cmap='YlOrBr',
             xticklabels=['Not Churned', 'Churned'],
@@ -52,5 +59,5 @@ plt.title('Confusion Matrix')
 plt.ylabel('Actual')
 plt.xlabel('Predicted')
 plt.tight_layout()
-plt.savefig('confusion_matrix.png', dpi=150)
+plt.savefig('visualizations/confusion_matrix.png', dpi=150)
 plt.show()
